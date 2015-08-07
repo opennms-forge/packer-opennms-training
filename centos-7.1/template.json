@@ -4,7 +4,7 @@
   },
   "variables": {
     "chef_version": "provisionerless",
-    "iso_mirror": "ftp.iij.ad.jp"
+    "iso_mirror": "mirror.opennms.eu"
   },
   "builders": [
     {
@@ -17,9 +17,9 @@
       "guest_os_type": "RedHat_64",
       "headless": true,
       "http_directory": "http",
-      "iso_checksum": "1795184136b8bdddabe50453cc2cc2d46f0f7c5e",
-      "iso_checksum_type": "sha1",
-      "iso_url": "http://{{user `iso_mirror`}}/pub/linux/centos/7.1.1503/isos/x86_64/CentOS-7-x86_64-DVD-1503-01.iso",
+      "iso_checksum": "7cf1ac8da13f54d6be41e3ccf228dc5bb35792f515642755ff4780d5714d4278",
+      "iso_checksum_type": "sha256",
+      "iso_url": "http://{{user `iso_mirror`}}/centos/7.1.1503/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -42,9 +42,9 @@
       "guest_os_type": "centos-64",
       "headless": true,
       "http_directory": "http",
-      "iso_checksum": "1795184136b8bdddabe50453cc2cc2d46f0f7c5e",
-      "iso_checksum_type": "sha1",
-      "iso_url": "http://{{user `iso_mirror`}}/pub/linux/centos/7.1.1503/isos/x86_64/CentOS-7-x86_64-DVD-1503-01.iso",
+      "iso_checksum": "7cf1ac8da13f54d6be41e3ccf228dc5bb35792f515642755ff4780d5714d4278",
+      "iso_checksum_type": "sha256",
+      "iso_url": "http://{{user `iso_mirror`}}/centos/7.1.1503/isos/x86_64/CentOS-7-x86_64-Minimal-1503-01.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
