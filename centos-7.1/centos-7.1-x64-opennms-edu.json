@@ -1,11 +1,10 @@
 {
   "push": {
-    "name": "indigo/opennms-stable-repo"
+    "name": "indigo/opennms-edu-stable"
   },
   "variables": {
     "chef_version": "provisionerless",
     "iso_mirror": "ftp.iij.ad.jp",
-    "opennms_release": "stable"
   },
   "builders": [
     {
@@ -90,10 +89,10 @@
       "type": "vagrant",
       "override": {
         "virtualbox": {
-          "output": "centos-7.1-x64-virtualbox-opennms-{{user `opennms_release`}}.box"
+          "output": "centos-7.1-x64-virtualbox-opennms-edu-stable.box"
         },
         "vmware": {
-          "output": "centos-7.1-x64-vmware-opennms-{{user `opennms_release`}}.box"
+          "output": "centos-7.1-x64-vmware-opennms-edu-stable.box"
         }
       }
     }
