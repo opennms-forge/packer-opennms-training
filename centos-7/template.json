@@ -70,6 +70,7 @@
             "scripts/vagrant.sh",
             "scripts/virtualbox.sh",
             "scripts/opennms-prepare.sh",
+            "scripts/NMS-8153.sh",
             "scripts/cleanup.sh"
           ]
         },
@@ -79,6 +80,7 @@
             "scripts/vagrant.sh",
             "scripts/vmware.sh",
             "scripts/opennms-prepare.sh",
+            "scripts/NMS-8153.sh",
             "scripts/cleanup.sh"
           ]
         }
