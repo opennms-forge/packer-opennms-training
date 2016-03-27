@@ -1,11 +1,11 @@
 {
   "push": {
-    "name": "opennms/opennms-edu-stable"
+    "name": "opennms/opennms-edu-centos-stable"
   },
   "variables": {
-    "chef_version": "provisionerless",
     "iso_mirror": "mirror.informatik.hs-fulda.de",
-    "onms-version": "17.1.0-1"
+    "opennms_release": "stable",
+    "onms-version": "17.1.1-1"
   },
   "builders": [
     {
@@ -20,7 +20,7 @@
       "http_directory": "http",
       "iso_checksum": "f90e4d28fa377669b2db16cbcb451fcb9a89d2460e3645993e30e137ac37d284",
       "iso_checksum_type": "sha256",
-      "iso_url": "http://{{user `iso_mirror`}}/centos/7.2.1511/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso",
+      "iso_url": "https://{{user `iso_mirror`}}/centos/7.2.1511/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -29,7 +29,7 @@
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
       "vboxmanage": [
-        [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
+        [ "modifyvm", "{{.Name}}", "--memory", "2048" ],
         [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
       ]
     },
@@ -45,7 +45,7 @@
       "http_directory": "http",
       "iso_checksum": "f90e4d28fa377669b2db16cbcb451fcb9a89d2460e3645993e30e137ac37d284",
       "iso_checksum_type": "sha256",
-      "iso_url": "http://{{user `iso_mirror`}}/centos/7.2.1511/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso",
+      "iso_url": "https://{{user `iso_mirror`}}/centos/7.2.1511/isos/x86_64/CentOS-7-x86_64-Minimal-1511.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -53,7 +53,7 @@
       "shutdown_command": "echo '/sbin/halt -h -p' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
       "tools_upload_flavor": "linux",
       "vmx_data": {
-        "memsize": "1024",
+        "memsize": "2048",
         "numvcpus": "2",
         "cpuid.coresPerSocket": "1"
       }
@@ -70,7 +70,6 @@
             "scripts/vagrant.sh",
             "scripts/virtualbox.sh",
             "scripts/opennms-prepare.sh",
-            "scripts/NMS-8153.sh",
             "scripts/cleanup.sh"
           ]
         },
@@ -80,7 +79,6 @@
             "scripts/vagrant.sh",
             "scripts/vmware.sh",
             "scripts/opennms-prepare.sh",
-            "scripts/NMS-8153.sh",
             "scripts/cleanup.sh"
           ]
         }
