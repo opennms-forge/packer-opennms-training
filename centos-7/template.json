@@ -4,8 +4,7 @@
   },
   "variables": {
     "iso_mirror": "mirror.informatik.hs-fulda.de",
-    "opennms_release": "stable",
-    "onms-version": "17.1.1-1"
+    "opennms_release": "stable"
   },
   "builders": [
     {
@@ -70,6 +69,7 @@
             "scripts/vagrant.sh",
             "scripts/virtualbox.sh",
             "scripts/opennms-prepare.sh",
+            "scripts/grafana-prepare.sh",
             "scripts/cleanup.sh"
           ]
         },
@@ -79,6 +79,7 @@
             "scripts/vagrant.sh",
             "scripts/vmware.sh",
             "scripts/opennms-prepare.sh",
+            "scripts/grafana-prepare.sh",
             "scripts/cleanup.sh"
           ]
         }
@@ -90,10 +91,10 @@
       "type": "vagrant",
       "override": {
         "virtualbox": {
-          "output": "centos-7-x64-virtualbox-opennms-edu-{{user `onms-version`}}.box"
+          "output": "centos-7-x64-virtualbox-opennms-edu.box"
         },
         "vmware": {
-          "output": "centos-7-x64-vmware-opennms-edu-{{user `onms-version`}}.box"
+          "output": "centos-7-x64-vmware-opennms-edu.box"
         }
       }
     }
