@@ -1,0 +1,54 @@
+
+= Packer template for Training OpenNMS
+
+This template uses link:https://packer.io[packer.io] to create a virtual machine image based for training purposes.
+With the template CentOS 7 as minimal _Server with GUI_ is installed.
+
+== Requirements
+
+* git
+* Virtual Box
+* packer installed and `packer` binary in search path
+
+== What is installed
+
+The following componets are installed but are not configured:
+
+* _CentOS 7_ as "Server with GUI"
+* _PostgreSQL_
+* _Net-SNMP_
+* _OpenNMS Horizon_ when the `horizon.json` is used
+* _OpenNMS Meridian_ when the `meridian.json` is used
+
+A default user `vagrant` with sudo permissions is created and has the password `vagrant`.
+
+WARNING: Oracle JDK will be installed, after first start it is required to set Oracle JDK as default Java environment with `alternatives --config java`.
+
+WARNING: Firewall is enabled and does not allow by default access to TCP/8980.
+
+== Usage
+
+Create the virtual box image with the following command:
+
+.Build VirtualBox image for Horion or Meridian
+[source, bash]
+----
+packer build --only=virtualbox-iso {horizon, meridian}.json
+----
+
+.Validate the .json file
+[source, bash]
+----
+packer validate {horizon, meridian}.json
+----
+
+== Tweaks
+
+The .json files have a variable for the location of the CentOS 7 ISO file.
+It is preconfigured to use the CentOS 7 mirror at the University in Fulda.
+
+.Preconfigured mirror for CentOS 7 ISO file
+[source, yaml]
+----
+"iso_mirror": "mirror.informatik.hs-fulda.de"
+----
