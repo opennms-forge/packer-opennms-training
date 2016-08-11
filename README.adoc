@@ -26,6 +26,8 @@ WARNING: Oracle JDK will be installed, after first start it is required to set O
 
 WARNING: Firewall is enabled and does not allow by default access to TCP/8980.
 
+TIP: If you try to install _OpenNMS Meridian_ please add your credentials in the `meridian-prpare.sh` script where the yum repository is created.
+
 == Usage
 
 Create the virtual box image with the following command:
